@@ -1,0 +1,27 @@
+
+<h1>TGOV Link Checker</h1>
+<form>
+	
+	<div class="col-sm-12">
+		<div class="row">
+			<div class="col-sm-10"><input class="form-control" ng-model="inputs.link" placeholder="Please enter a link, either in the new or in the legacy, we are looking for ending with pattern. For example - /press-releases/Pages/default.aspx"></div>
+			<div class="col-sm-2"><button class="btn btn-success" ng-click="doCheck()">Check it </button></label></div>
+		</div>
+	</div>
+	<div class="col-sm-12" ng-show="!showResults">
+		<br/>
+		<p>The index was build by crawling both of the new and the legacy sites. It takes a day to crawl. Total more 18K pages and 46K links are indexed.</p>
+	It usually take couple minutes for the system to load the index data each time you load this page...
+	</div>
+	<div class="col-sm-12">
+		<div class="row" ng-show="showResults">
+			<table class="table">
+			<th align="left">Found in total {{results.length}} pages</th>
+			<tr ng-repeat="l in results">
+				<td><a href="{{l}}">{{l}}</a></td>
+			</tr>
+			</table>
+		</div>
+	</div>
+	
+</form>
